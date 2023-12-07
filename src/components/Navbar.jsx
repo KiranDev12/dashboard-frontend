@@ -16,7 +16,7 @@ import profileImage from "../assets/profile.jpeg";
 import { useTheme } from "@emotion/react";
 import { AppBar, IconButton, InputBase, Toolbar } from "@mui/material";
 
-function Navbar() {
+function Navbar({ isSidebarOpen, setIsSidebarOpen }) {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
@@ -24,7 +24,7 @@ function Navbar() {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left Side */}
         <FlexBetween>
-          <IconButton onClick={() => console.log("open/close sidebar")}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
